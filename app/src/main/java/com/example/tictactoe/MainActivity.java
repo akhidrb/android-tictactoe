@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button[] buttons = new Button[9];
-    private Button resetButton;
     private boolean player1Turn = true;
     private int roundCount = 0;
 
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 buttons[i].setOnClickListener(this);
         }
 
-        resetButton = findViewById(R.id.button_reset);
+        Button resetButton = findViewById(R.id.button_reset);
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
