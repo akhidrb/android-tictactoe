@@ -10,9 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button[] buttons = new Button[9];
-
+    private Button resetButton;
     private boolean player1Turn = true;
-
     private int roundCount = 0;
 
 
@@ -28,6 +27,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 buttons[i].setText("");
                 buttons[i].setOnClickListener(this);
         }
+
+        resetButton = findViewById(R.id.button_reset);
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetGame();
+            }
+        });
 
     }
 
@@ -76,26 +83,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void player1Wins() {
         Toast.makeText(this, "Player 1 wins!", Toast.LENGTH_SHORT).show();
-        resetBoard();
+        haltGameAction();
     }
 
     private void player2Wins() {
         Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
-        resetBoard();
+        haltGameAction();
     }
 
     private void draw() {
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
-        resetBoard();
     }
 
+    private void haltGameAction() {
+        for (int i=0; i < 9; i++) {
+            buttons[i].setOnClickListener(null);
+        }
+    }
 
-    private void resetBoard() {
+    private void startGameAction() {
+        for (int i=0; i < 9; i++) {
+            buttons[i].setOnClickListener(this);
+        }
+    }
+
+    private void resetGame() {
         for (int i = 0; i < 9; i++) {
             buttons[i].setText("");
         }
         roundCount = 0;
         player1Turn = true;
+        startGameAction();
     }
 
 }
