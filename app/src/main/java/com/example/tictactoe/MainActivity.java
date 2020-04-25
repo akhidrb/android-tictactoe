@@ -3,6 +3,7 @@ package com.example.tictactoe;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,8 +49,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             button.setText("O");
         }
+
+        if (checkWin()) {
+            if (playerOneTurn) playerOneWins();
+        }
+
         playerOneTurn = !playerOneTurn;
     }
+
+    private void playerOneWins() {
+        Toast.makeText(getApplicationContext(), "Player One Wins!!", Toast.LENGTH_SHORT).show();
+        resetGame();
+    }
+
+    private boolean checkWin() {
+        return true;
+    }
+
 
     private void resetGame() {
         for (int i = 0; i < numOfButtons; i++) {
