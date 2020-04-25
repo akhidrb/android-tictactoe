@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toast.makeText(getApplicationContext(), "Player Two Wins!!", Toast.LENGTH_SHORT).show();
         resetGame();
     }
-    
+
     private boolean checkWin() {
         return true;
     }
