@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Button button = (Button) v;
+        String buttonText = button.getText().toString();
+        if (!buttonText.isEmpty()) return;
+
         if (playerOneTurn) {
             button.setText("X");
         } else {
