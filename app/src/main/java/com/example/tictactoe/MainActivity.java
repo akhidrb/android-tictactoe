@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (checkWin()) {
             if (playerOneTurn) playerOneWins();
+            else playerTwoWins();
         }
 
         playerOneTurn = !playerOneTurn;
@@ -62,6 +63,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetGame();
     }
 
+    private void playerTwoWins() {
+        Toast.makeText(getApplicationContext(), "Player Two Wins!!", Toast.LENGTH_SHORT).show();
+        resetGame();
+    }
+    
     private boolean checkWin() {
         return true;
     }
