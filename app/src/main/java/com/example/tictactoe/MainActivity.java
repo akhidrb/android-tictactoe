@@ -60,12 +60,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void playerOneWins() {
         Toast.makeText(getApplicationContext(), "Player One Wins!!", Toast.LENGTH_SHORT).show();
-        resetGame();
+        haltGame();
     }
 
     private void playerTwoWins() {
         Toast.makeText(getApplicationContext(), "Player Two Wins!!", Toast.LENGTH_SHORT).show();
-        resetGame();
+        haltGame();
     }
 
     private boolean checkWin() {
@@ -88,6 +88,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (!fields[2].isEmpty() && fields[2].equals(fields[4]) && fields[2].equals(fields[6])) return true;
 
         return false;
+    }
+
+    private void haltGame() {
+        for (int i = 0; i < numOfButtons; i++) {
+            buttons.get(i).setOnClickListener(null);
+        }
     }
 
 
