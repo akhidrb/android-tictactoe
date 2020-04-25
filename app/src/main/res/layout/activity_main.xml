@@ -6,5 +6,73 @@
     android:orientation="vertical"
     tools:context="com.example.tictactoe.MainActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/reset" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/button_0"
+            android:layout_width="133dp"
+            android:layout_height="220dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp" />
+        <Button
+            android:id="@+id/button_1"
+            android:layout_width="133dp"
+            android:layout_height="220dp" />
+        <Button
+            android:id="@+id/button_2"
+            android:layout_width="133dp"
+            android:layout_height="220dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/button_3"
+            android:layout_width="133dp"
+            android:layout_height="220dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp" />
+        <Button
+            android:id="@+id/button_4"
+            android:layout_width="133dp"
+            android:layout_height="220dp" />
+        <Button
+            android:id="@+id/button_5"
+            android:layout_width="133dp"
+            android:layout_height="220dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/button_6"
+            android:layout_width="133dp"
+            android:layout_height="220dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp" />
+        <Button
+            android:id="@+id/button_7"
+            android:layout_width="133dp"
+            android:layout_height="220dp" />
+        <Button
+            android:id="@+id/button_8"
+            android:layout_width="133dp"
+            android:layout_height="220dp" />
+    </LinearLayout>
 
 </LinearLayout>
