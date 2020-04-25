@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int numOfButtons = 9;
+    private boolean playerOneTurn = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,17 +26,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });
-
     }
 
 
     @Override
     public void onClick(View v) {
         Button button = (Button) v;
-        button.setText("X");
+        if (playerOneTurn) {
+            button.setText("X");
+        } else {
+            button.setText("O");
+        }
+        playerOneTurn = !playerOneTurn;
     }
 
 }
